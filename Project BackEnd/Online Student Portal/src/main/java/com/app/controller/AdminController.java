@@ -44,6 +44,66 @@ public class AdminController {
 			System.out.println("err in add Faculty " + e);
 			return new ResponseEntity<>(new ApiResponse(e.getMessage()), HttpStatus.BAD_REQUEST);// => invalid data from
 		}
+		
 	}
-
+	@PostMapping("/addstudent")
+	public ResponseEntity<?> addStudent(@RequestBody User u)
+	{
+		u.setPassword(passwordEncode.encode(u.getPassword()));
+		try {
+		return ResponseEntity.status(HttpStatus.CREATED).body(adminService.addStudent(u));
+		}
+		catch (Exception e) {
+		    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse(e.getMessage()));
+		}
+	}
+	@GetMapping("/editfaculty/{id}")
+	public ResponseEntity<?> getFacultyById(@PathVariable Long id)
+	{
+		User u=adminService.getFacultyById(id);
+		HashMap<String,Object> ht=new HashMap<>();
+		if(u==null)
+		{
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse("faculty not found"));
+		}
+		ht.put("user", u);
+		return ResponseEntity.ok(ht);
+	}
+	@PutMapping("/editfaculty/{id}")
+	public ResponseEntity<?> editFacultyDetails(@RequestBody User u,@PathVariable Long id)
+	{
+		try {
+		return ResponseEntity.status(HttpStatus.OK).body(adminService.editFacultyDetails(u,id));
+		}
+		catch (Exception e) {
+		    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse(e.getMessage()));
+		}
+	}
+	@GetMapping("/students")
+		public ResponseEntity<?> getAllStudents()
+		{
+			try {
+				return ResponseEntity.status(HttpStatus.OK).body(adminService.getAllStudents());
+			}
+			catch (Exception e) {
+				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+			}
+		}
+	@GetMapping("/faculties")
+	public ResponseEntity<?> getAllFaculties()
+	{
+		try {
+			return ResponseEntity.status(HttpStatus.OK).body(adminService.getAllFaculties());
+		}
+		catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+		}
+	}
+	@DeleteMapping("/deletefaculty/{id}")
+	public ResponseEntity<?> deleteFaculty(@PathVariable Long id)
+	{
+		try {
+			return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse(adminService.deleteFacultyDetails(id)));
+		}
+	}
 }

@@ -36,7 +36,8 @@ public class WebSecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint((request, response, ex) -> {
 			response.sendError(HttpServletResponse.SC_UNAUTHORIZED, ex.getMessage());
-		}).and().authorizeRequests().antMatchers("/admin/**").hasRole("ADMIN").antMatchers("/faculty/**")
+		}).and().authorizeRequests()
+		.antMatchers("/admin/**").hasRole("ADMIN").antMatchers("/faculty/**")
 				.hasRole("FACULTY").antMatchers("/student/**").hasRole("STUDENT").antMatchers("/", "/signin")
 				.permitAll() // enabling global
 								// access to all

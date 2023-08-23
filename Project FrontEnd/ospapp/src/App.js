@@ -12,9 +12,10 @@ function App() {
       
 
      <Route path="/" element={<Home />}></Route>
-                <Route path="/about" element={<About />}></Route>
-                <Route exact path="/contact" element={<Contact />}></Route>
-                <Route exact path="/signin" element={<Signin />}></Route>
+      <Route path="/about" element={<About />}></Route>
+      <Route exact path="/contact" element={<Contact />}></Route>
+      <Route exact path="/signin" element={<Signin />}></Route>
+      <Route exact path="/admin" element={<Admin/>}></Route>
      </Routes>
     </div>
   );
