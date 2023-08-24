@@ -19,6 +19,12 @@ public interface IAdminService {
 
 	public List<User> getAllFaculties();
 
+	public String deleteStudentDetails(Long id);
+
+	public User getStudentById(Long id);
+	
+	public User editStudentDetails(User u, Long id);
+
 	public String deleteFacultyDetails(Long id);
 
 }

@@ -50,6 +50,13 @@ public class AdminServiceImpl implements IAdminService {
 	}
 
 	@Override
+	public String deleteStudentDetails(Long id) {
+	    User u=userRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("student doesnt exist"));
+	    userRepo.delete(u);
+	    return "Deleted student successfully";
+	}
+
+	@Override
 	public String deleteFacultyDetails(Long id) {
 	    User u=userRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("faculty doesnt exist"));
 	    userRepo.delete(u);
@@ -59,6 +66,21 @@ public class AdminServiceImpl implements IAdminService {
 	@Override
 	public List<User> getAllFaculties() {
 		return userRepo.findByRole(Role.ROLE_FACULTY);
+	}
+
+	@Override
+	public User getStudentById(Long id) {
+		return userRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("student doesnt exist"));
+	}
+
+	@Override
+	public User editStudentDetails(User detachedUser, Long id) {
+		User u=userRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("student doesnt exist"));
+		u.setAddress(detachedUser.getAddress());
+		u.setDob(detachedUser.getDob());
+		u.setMobNo(detachedUser.getMobNo());
+		u.setName(detachedUser.getName());
+		return userRepo.save(u);
 	}
    
 }

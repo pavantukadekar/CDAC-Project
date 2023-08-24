@@ -3,6 +3,7 @@ package com.app.controller;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
@@ -66,7 +67,7 @@ public class AdminController {
 		{
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse("faculty not found"));
 		}
-		ht.put("user", u);
+		ht.put("data", u);
 		return ResponseEntity.ok(ht);
 	}
 	@PutMapping("/editfaculty/{id}")
@@ -79,7 +80,29 @@ public class AdminController {
 		    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse(e.getMessage()));
 		}
 	}
-	@GetMapping("/students")
+	@GetMapping("/editstudent/{id}")
+	public ResponseEntity<?> getStudentById(@PathVariable Long id)
+	{
+		User u=adminService.getStudentById(id);
+		HashMap<String,Object> ht=new HashMap<>();
+		if(u==null)
+		{
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse("faculty not found"));
+		}
+		ht.put("data", u);
+		return ResponseEntity.ok(ht);
+	}
+	@PutMapping("/editstudent/{id}")
+	public ResponseEntity<?> editStudentDetails(@RequestBody User u,@PathVariable Long id)
+	{
+		try {
+		return ResponseEntity.status(HttpStatus.OK).body(adminService.editStudentDetails(u,id));
+		}
+		catch (Exception e) {
+		    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse(e.getMessage()));
+		}
+	}
+	@GetMapping("/viewstudent")
 		public ResponseEntity<?> getAllStudents()
 		{
 			try {
@@ -89,7 +112,7 @@ public class AdminController {
 				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
 			}
 		}
-	@GetMapping("/faculties")
+	@GetMapping("/viewfaculty")
 	public ResponseEntity<?> getAllFaculties()
 	{
 		try {
@@ -99,11 +122,26 @@ public class AdminController {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
 		}
 	}
-	@DeleteMapping("/deletefaculty/{id}")
+	@DeleteMapping("/viewstudent/delete/{id}")
+	public ResponseEntity<?> deleteStudent(@PathVariable Long id)
+	{
+		try {
+			return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse(adminService.deleteStudentDetails(id)));
+		}
+		catch(Exception e)
+		{
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+		}
+	}
+	@DeleteMapping("/viewfaculty/delete/{id}")
 	public ResponseEntity<?> deleteFaculty(@PathVariable Long id)
 	{
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse(adminService.deleteFacultyDetails(id)));
+		}
+		catch(Exception e)
+		{
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
 		}
 	}
 }

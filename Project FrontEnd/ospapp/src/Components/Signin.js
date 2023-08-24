@@ -1,8 +1,7 @@
-
+import './Style.css'
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import NavBar from './NavBar';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -74,7 +73,7 @@ function Signin() {
 
        return (
               <div>
-                     <NavBar></NavBar>
+              
                      <ToastContainer
                             position="top-center"
                             autoClose={5000}
@@ -86,7 +85,7 @@ function Signin() {
                             draggable
                             pauseOnHover
                      />
-                     <div className="container-fluid">
+                     <div className="container-fluid" >
                             <div className="row justify-content-around align-items-center" style={{ height: "98vh" }}>
                                    <div className="col-4 p-5 shadow">
                                           <h3 className="head">Login</h3>
