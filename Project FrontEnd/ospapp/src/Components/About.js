@@ -36,7 +36,7 @@ function About() {
           <div className="card w-75" style={{ marginTop: "5px" }}>
             <div className="card-body">
               <h5 className="card-title"></h5>
-              <p className="card-text text-black fs-4"><p>We would like to thank <span className='text-black fw-bolder' style={{ fontFamily: "unset" }}>Ms.Sarita</span> for her consistent guidance and support throughout the project.</p></p>
+              <p className="card-text text-black fs-4"><p>We would like to thank <span className='text-black fw-bolder' style={{ fontFamily: "unset" }}>Mr.Harshal and Ms.Monika</span> for her consistent guidance and support throughout the project.</p></p>
             </div>
           </div>
         </center>

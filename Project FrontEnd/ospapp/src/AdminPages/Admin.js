@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import AdminNavBar from './AdminNavBar';
 
 function Admin() {
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ function Admin() {
 
   return (
     <div>
+      <AdminNavBar/>
       <ToastContainer
         position="top-center"
         autoClose={5000}

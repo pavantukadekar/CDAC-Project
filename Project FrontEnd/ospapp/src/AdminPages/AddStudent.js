@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-
+import AdminNavBar from './AdminNavBar';
 function AddStudent() {
   useEffect(() => {
     if (sessionStorage.getItem("userName") === null) {
@@ -83,6 +83,7 @@ function AddStudent() {
   return (
 
     <div>
+      <AdminNavBar/>
       <div className='cotainer-fluid'>
         <div className="row justify-content-around align-items-center" style={{ height: "98vh", marginTop: 15 }}>
           <div className="col-4 p-4 shadow bg-white rounded">

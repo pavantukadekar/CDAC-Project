@@ -14,6 +14,11 @@ import AdminViewStudent from './AdminPages/AdminViewStudent'
 import AdminViewFaculty from './AdminPages/AdminViewFaculty';
 import EditStudent from './AdminPages/EditStudent';
 import EditFaculty from './AdminPages/EditFaculty';
+import Faculty from './FacultyPages/Faculty';
+import AddTimeTable from './FacultyPages/AddTimeTable';
+import ViewTimeTable from './FacultyPages/ViewTimeTable';
+import AddNoticeBoard from './FacultyPages/AddNoticeBoard';
+import ViewNoticeBoard from './FacultyPages/ViewNoticeBoard';
 function App() {
   return (
     <div className="App">
@@ -31,6 +36,11 @@ function App() {
       <Route exact path="/admin/viewfaculty" element={<AdminViewFaculty/>}></Route>
       <Route exact path="/admin/editstudent/:id" element={<EditStudent/>}></Route>
       <Route exact path="/admin/editfaculty/:id" element={<EditFaculty/>}></Route>
+      <Route exact path="/faculty" element={<Faculty/>}></Route>
+      <Route exact path="/faculty/addtimetable/" element={<AddTimeTable/>}></Route>
+      <Route exact path="/faculty/viewtimetable" element={<ViewTimeTable/>}></Route>
+      <Route exact path="/faculty/addnoticeboard/" element={<AddNoticeBoard/>}></Route>
+      <Route exact path="/faculty/viewnoticeboard" element={<ViewNoticeBoard/>}></Route>
      </Routes>
     </div>
   );

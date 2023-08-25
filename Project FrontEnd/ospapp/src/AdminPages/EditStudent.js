@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import AdminNavBar from './AdminNavBar';
 
 function EditStudent() {
   useEffect(() => {
@@ -109,6 +110,7 @@ function EditStudent() {
   return (
 
     <div>
+      <AdminNavBar/>
       <div className='cotainer-fluid'>
         <div className="row justify-content-around align-items-center" style={{ height: "98vh", marginTop: 0 }}>
           <div className="col-4 p-5 shadow bg-white rounded">
