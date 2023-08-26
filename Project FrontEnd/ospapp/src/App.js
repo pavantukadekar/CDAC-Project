@@ -14,11 +14,21 @@ import AdminViewStudent from './AdminPages/AdminViewStudent'
 import AdminViewFaculty from './AdminPages/AdminViewFaculty';
 import EditStudent from './AdminPages/EditStudent';
 import EditFaculty from './AdminPages/EditFaculty';
+
+
 import Faculty from './FacultyPages/Faculty';
 import AddTimeTable from './FacultyPages/AddTimeTable';
 import ViewTimeTable from './FacultyPages/ViewTimeTable';
 import AddNoticeBoard from './FacultyPages/AddNoticeBoard';
 import ViewNoticeBoard from './FacultyPages/ViewNoticeBoard';
+import EditTimeTable from './FacultyPages/EditTimeTable';
+import EditNoticeBoard from './FacultyPages/EditNoticeBoard';
+import ViewStudent from './FacultyPages/ViewStudent';
+import UploadAssignment from './FacultyPages/UploadAssignment';
+import ViewAssignment from './FacultyPages/ViewAssignment';
+import EditAssignment from './FacultyPages/EditAssignment';
+import ViewAssignmentAnswer from './FacultyPages/ViewAssignmentAnswer';
+import Student from './StudentPages/Student';
 function App() {
   return (
     <div className="App">
@@ -41,6 +51,16 @@ function App() {
       <Route exact path="/faculty/viewtimetable" element={<ViewTimeTable/>}></Route>
       <Route exact path="/faculty/addnoticeboard/" element={<AddNoticeBoard/>}></Route>
       <Route exact path="/faculty/viewnoticeboard" element={<ViewNoticeBoard/>}></Route>
+      <Route exact path="/faculty/edittimetable/:id" element={<EditTimeTable/>}></Route>
+      <Route exact path="/faculty/editnoticeboard/:id" element={<EditNoticeBoard/>}></Route>
+      <Route exact path="/faculty/viewstudent" element={<ViewStudent/>}></Route>
+      <Route exact path="/faculty/addassignment" element={<UploadAssignment/>}></Route>
+      <Route exact path="/faculty/viewassignment" element={<ViewAssignment/>}></Route>
+      <Route exact path="/faculty/editassignment/:id" element={<EditAssignment/>}></Route>
+      <Route exact path="/faculty/viewassignmentanswer" element={<ViewAssignmentAnswer/>}></Route>
+
+
+      <Route exact path="/student" element={<Student/>}></Route>
      </Routes>
     </div>
   );
