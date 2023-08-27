@@ -11,4 +11,6 @@ public interface AssignmentAnswerRepository extends JpaRepository<AssignmentAnsw
 
 	List<AssignmentAnswer> findByFaculty(User u);
 
+	List<AssignmentAnswer> findByStudent(User u);
+
 }

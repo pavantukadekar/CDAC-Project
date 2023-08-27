@@ -7,6 +7,9 @@ import Home from './Components/Home'
 import About from './Components/About'
 import Contact from './Components/Contact'
 import Signin from './Components/Signin'
+
+
+
 import Admin from './AdminPages/Admin'
 import AddStudent from './AdminPages/AddStudent';
 import AddFaculty from './AdminPages/AddFaculty'
@@ -27,8 +30,14 @@ import ViewStudent from './FacultyPages/ViewStudent';
 import UploadAssignment from './FacultyPages/UploadAssignment';
 import ViewAssignment from './FacultyPages/ViewAssignment';
 import EditAssignment from './FacultyPages/EditAssignment';
+
+
+
 import ViewAssignmentAnswer from './FacultyPages/ViewAssignmentAnswer';
 import Student from './StudentPages/Student';
+import Assignment from './StudentPages/Assignment';
+import NoticeBoard from './StudentPages/NoticeBoard';
+import TimeTable from './StudentPages/TimeTable';
 function App() {
   return (
     <div className="App">
@@ -39,6 +48,9 @@ function App() {
       <Route path="/about" element={<About />}></Route>
       <Route exact path="/contact" element={<Contact />}></Route>
       <Route exact path="/signin" element={<Signin />}></Route>
+
+
+
       <Route exact path="/admin" element={<Admin/>}></Route>
       <Route exact path="/admin/addstudent" element={<AddStudent/>}></Route>
       <Route exact path="/admin/addfaculty" element={<AddFaculty/>}></Route>
@@ -46,6 +58,9 @@ function App() {
       <Route exact path="/admin/viewfaculty" element={<AdminViewFaculty/>}></Route>
       <Route exact path="/admin/editstudent/:id" element={<EditStudent/>}></Route>
       <Route exact path="/admin/editfaculty/:id" element={<EditFaculty/>}></Route>
+
+
+
       <Route exact path="/faculty" element={<Faculty/>}></Route>
       <Route exact path="/faculty/addtimetable/" element={<AddTimeTable/>}></Route>
       <Route exact path="/faculty/viewtimetable" element={<ViewTimeTable/>}></Route>
@@ -61,6 +76,9 @@ function App() {
 
 
       <Route exact path="/student" element={<Student/>}></Route>
+      <Route exact path="/student/assignment" element={<Assignment/>}></Route>
+      <Route exact path="/student/noticeboard" element={NoticeBoard}></Route>
+      <Route exact path="/student/timetable" element={<TimeTable/>}></Route>
      </Routes>
     </div>
   );

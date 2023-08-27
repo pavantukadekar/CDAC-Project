@@ -23,7 +23,7 @@ public class MailService {
 		User u = userRepo.findById(FacultyId).orElseThrow();
 		List<User> listUser = userRepo.findByRole(Role.ROLE_STUDENT);
 		SimpleMailMessage message = new SimpleMailMessage();
-		message.setFrom("evidyalaya.official@gmail.com");
+		message.setFrom("evidyalaya.portal@gmail.com");
 		message.setSubject("Assignment Uploaded !!!");
 		message.setText("You have a new assignment from Faculty : " + u.getName()
 				+ " . Kindly , check portal for more details!!!");
