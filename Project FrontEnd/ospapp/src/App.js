@@ -38,6 +38,10 @@ import Student from './StudentPages/Student';
 import Assignment from './StudentPages/Assignment';
 import NoticeBoard from './StudentPages/NoticeBoard';
 import TimeTable from './StudentPages/TimeTable';
+import ViewFaculty from './StudentPages/ViewFaculty';
+import Result from './StudentPages/Result';
+
+
 function App() {
   return (
     <div className="App">
@@ -77,8 +81,10 @@ function App() {
 
       <Route exact path="/student" element={<Student/>}></Route>
       <Route exact path="/student/assignment" element={<Assignment/>}></Route>
-      <Route exact path="/student/noticeboard" element={NoticeBoard}></Route>
+      <Route exact path="/student/noticeboard" element={<NoticeBoard/>}></Route>
       <Route exact path="/student/timetable" element={<TimeTable/>}></Route>
+      <Route exact path="/student/faculty" element={<ViewFaculty/>}></Route>
+      <Route exact path="/student/result" element={<Result/>}></Route>
      </Routes>
     </div>
   );

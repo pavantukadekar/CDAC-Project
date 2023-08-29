@@ -20,6 +20,7 @@ public class MailService {
 	private IUserRepository userRepo;
 
 	public void sendSimpleEmail(Long FacultyId) {
+		System.out.println("in send mail");
 		User u = userRepo.findById(FacultyId).orElseThrow();
 		List<User> listUser = userRepo.findByRole(Role.ROLE_STUDENT);
 		SimpleMailMessage message = new SimpleMailMessage();
