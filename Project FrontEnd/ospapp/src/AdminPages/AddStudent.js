@@ -44,6 +44,7 @@ function AddStudent() {
       address: data.address,
       password: data.password
     }, config)
+  
       .then(response => {
         // alert("Faculty Added Succesfully!!!",response.data);
         toast.success('Student Added Succesfully!!!', {
@@ -92,7 +93,7 @@ function AddStudent() {
               <div className='mb-3'>
                 <lable>Student Name</lable><br></br>
 
-                <input type='text' placeholder='Enter Student Name' className='form-control' onChange={(e) => handle(e)} id='name' value={data.value}></input>
+                <input type='text' placeholder='Enter Student Name'  className='form-control' pattern="[a-zA-Z]+" title="name must contain only alphabets" onChange={(e) => handle(e)} id='name' value={data.value}></input>
               </div>
               <div className='mb-3'>
                 <label>Date Of Birth</label>

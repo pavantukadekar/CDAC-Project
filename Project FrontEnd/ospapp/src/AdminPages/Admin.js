@@ -39,8 +39,8 @@ function Admin() {
             <table style={{ marginLeft: 15, marginTop: 20 }}>
               <tr>
                 <td className='p-1 px-5 ' >
-                  <div className="card text-bg-success mb-3" style={{ maxWidth: '18rem' }}>
-                    <div className="card-body">
+                  <div  className="card text-bg-success mb-3"style={{ maxWidth: '18rem' }}>
+                    <div style={{backgroundColor:"gray"}}>
 
                       <NavLink to="/admin/addfaculty" style={{ textDecoration: 'none' }}> <h5 className="card-title p-4 text-white"> <i class="bi bi-person-plus-fill"></i> &nbsp; Add Faculty</h5></NavLink>
                     </div>
@@ -49,8 +49,8 @@ function Admin() {
 
                 <td>
                   <div className="card text-bg-success mb-3" style={{ maxWidth: '18rem' }}>
-                    <div className="card-body">
-                      <NavLink to="/admin/viewfaculty" style={{ textDecoration: 'none' }}><h5 className="card-title p-4 text-white"> <i class="bi bi-eye-fill"></i> &nbsp; View Faculty</h5> </NavLink>
+                    <div style={{backgroundColor:"gray"}}>
+                      <NavLink to="/admin/viewfaculty" style={{ textDecoration: 'none' }}><h5 className="card-title p-4 text-white"> <i class="bi bi-person-plus-fill"></i> &nbsp; View Faculty</h5> </NavLink>
                     </div>
                   </div>
                 </td>
@@ -58,15 +58,15 @@ function Admin() {
               <tr>
                 <td className='p-3 px-5'>
                   <div className="card text-bg-success mb-3" style={{ maxWidth: '18rem' }}>
-                    <div className="card-body">
+                    <div style={{backgroundColor:"gray"}}>
                       <NavLink to="/admin/addstudent" style={{ textDecoration: 'none' }}><h5 className="card-title p-4 text-white"><i class="bi bi-person-plus-fill"></i> &nbsp;Add Student</h5> </NavLink>
                     </div>
                   </div>
                 </td>
                 <td>
                   <div className="card text-bg-success mb-3" style={{ maxWidth: '18rem' }}>
-                    <div className="card-body">
-                      <NavLink to="/admin/viewstudent" style={{ textDecoration: 'none' }}><h5 className="card-title p-4 text-white"> <i class="bi bi-eye-fill"></i> &nbsp; View Student</h5> </NavLink>
+                    <div style={{backgroundColor:"gray"}}>
+                      <NavLink to="/admin/viewstudent" style={{ textDecoration: 'none' }}><h5 className="card-title p-4 text-white"> <i class="bi bi-person-plus-fill"></i> &nbsp; View Student</h5> </NavLink>
                     </div>
                   </div>
                 </td>

@@ -53,9 +53,9 @@ function ViewFaculty() {
 
             <center><span className="fs-2 fw-bolder"><h2>Faculty Details</h2></span></center>
             <div className='ui search'>
-              <div className='ui icon input' style={{ marginLeft: "33rem" }} >
+             {/*  <div className='ui icon input' style={{ marginLeft: "33rem" }} >
                 <input type='text' placeholder='Enter name or email' className='prompt col-9 rounded border-dark form-control col-10' name="searchText" onChange={handleSearchText} value={searchText} style={{ height: "3rem" }}></input>
-              </div>
+              </div> */}
               <br></br>
             </div>
             <table class="table table-striped table-secondary table-hover">

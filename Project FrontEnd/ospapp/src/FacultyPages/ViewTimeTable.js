@@ -100,9 +100,9 @@ function ViewTimeTable() {
             <div className="col-8 p-5 shadow bg-white rounded">
               <center><span className='fs-2 fw-bolder'><h2>View Timetable Details</h2></span></center>
               <div className='ui search'>
-                <div className='ui icon input' style={{ marginLeft: "33rem" }} >
+                {/* <div className='ui icon input' style={{ marginLeft: "33rem" }} >
                   <input type='text' placeholder='Enter module name' className='prompt col-9 rounded border-dark form-control col-10' name="searchText" onChange={handleSearchText} value={searchText} style={{ height: "3rem" }}></input>
-                </div>
+                </div> */}
                 <br></br>
               </div>
               <table className="table table-striped table-secondary table-hover">
@@ -148,7 +148,7 @@ function ViewTimeTable() {
                             {platform}
                           </td>
                           <td>
-                            <td><a href={link}>Click Here</a></td>
+                            <td><a href="www.zoom.com">Click Here</a></td>
                           </td>
                           <td>
                             <button className="button border-white" onClick={() => navigate(`/faculty/edittimetable/${id}`)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">

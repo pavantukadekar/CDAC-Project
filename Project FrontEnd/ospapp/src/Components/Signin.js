@@ -45,18 +45,11 @@ function Signin() {
                             return result.data;
                      }).catch(error => {
                             alert('Bad Credential')
-                            toast.warn('Bad Credential !!', {
-                                   position: "top-center",
-                                   autoClose: 5000,
-                                   hideProgressBar: false,
-                                   closeOnClick: true,
-                                   pauseOnHover: true,
-                                   draggable: true,
-                                   progress: undefined,
-                            });
                             reset()
                             console.log(error)
                      })
+              if(user1!==undefined)
+              {
               console.log(user1.authenticatedDetails.principal.id)
               sessionStorage.setItem("userName", user1.authenticatedDetails.principal.name)
               sessionStorage.setItem("userId", user1.authenticatedDetails.principal.id)
@@ -69,6 +62,7 @@ function Signin() {
                      navigate('/faculty');
               if (user1.authenticatedDetails.principal.role === "ROLE_ADMIN")
                      navigate('/admin');
+              }
        }
 
 
@@ -94,7 +88,7 @@ function Signin() {
                                                  <div className="field">
                                                         <label>Email Address</label>
                                                         <div className="mb-3">
-                                                               <input type="email" name="email" id="email" className="form-control" placeholder="Enter Email" onChange={handleEmail} value={email} required />
+                                                               <input type="email" name="email" id="email" className="form-control" placeholder="Enter Email" onChange={handleEmail} value={email}  />
                                                                <div id="emailErrorMsg"></div>
                                                         </div>
 
@@ -102,7 +96,7 @@ function Signin() {
                                                  <div className="field">
                                                         <label>Password</label>
                                                         <div className="mb-3">
-                                                               <input type="password" name="pass" id="pass" className="form-control" placeholder="Enter Password" onChange={handlePassword} value={password} required />
+                                                               <input type="password" name="pass" id="pass" className="form-control" placeholder="Enter Password" onChange={handlePassword} value={password}  />
                                                         </div>
                                                         <div id="passErrorMsg"></div>
                                                  </div>

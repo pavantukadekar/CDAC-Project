@@ -7,8 +7,16 @@ function AdminNavBar() {
   const navigate = useNavigate()
   const handleLogout = function () {
     sessionStorage.clear();
+  
+    // Broadcast a message to other tabs/windows
+    const logoutChannel = new BroadcastChannel('logout-channel');
+    logoutChannel.postMessage({ type: 'logout' });
+  
+    // Navigate to the sign-in page
     navigate('/signin');
-    alert("Signed Out Successfully !!")
+  
+    // Display a sign-out success message
+    alert("Signed Out Successfully !!!");
     toast.info('Signed Out Successfully', {
       position: "top-center",
       autoClose: 5000,
@@ -18,7 +26,18 @@ function AdminNavBar() {
       draggable: true,
       progress: undefined,
     });
+  
+    // Close the broadcast channel
+    logoutChannel.close();
   }
+  
+  // Listen for messages from other tabs/windows
+  const logoutChannel = new BroadcastChannel('logout-channel');
+  logoutChannel.addEventListener('message', (event) => {
+    if (event.data.type === 'logout') {
+      navigate('/signin');
+    }
+  });
   return (
     <div>
 

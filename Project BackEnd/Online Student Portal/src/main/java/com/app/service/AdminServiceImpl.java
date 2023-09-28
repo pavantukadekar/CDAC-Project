@@ -46,7 +46,7 @@ public class AdminServiceImpl implements IAdminService {
 
 	@Override
 	public List<User> getAllStudents() {
-		return userRepo.findByRole(Role.ROLE_ADMIN);
+		return userRepo.findByRole(Role.ROLE_STUDENT);
 	}
 
 	@Override

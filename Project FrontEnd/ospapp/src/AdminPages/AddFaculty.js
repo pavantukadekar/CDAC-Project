@@ -86,35 +86,35 @@ function AddFaculty() {
       <AdminNavBar/>
       <div className='cotainer-fluid'>
         <div className="row justify-content-around align-items-center" style={{ height: "98vh", marginTop: 10 }}>
-          <div className="col-4 p-4 shadow bg-white rounded">
-            <span className='fs-3 mb-3 fw-bolder' style={{ fontFamily: "unset" }}><center><h2>Add Faculty</h2></center></span>
+          <div className="col-4 p-4 shadow bg-black rounded" >
+            <span className='fs-3 mb-3 fw-bolder' style={{ fontFamily: "unset" ,color:"white"}}><center><h2>Add Faculty</h2></center></span>
             <form onSubmit={(e) => submit(e)}>
               <div className='mb-3'>
-                <lable>Faculty Name</lable><br></br>
+                <lable style={{color:"white"}}>Faculty Name</lable><br></br>
 
-                <input type='text' placeholder='Enter Faculty Name' className='form-control' onChange={(e) => handle(e)} id='name' value={data.value}></input>
+                <input type='text' placeholder='Enter Faculty Name' pattern="[a-zA-Z]+" title="name must contain only alphabets" className='form-control' onChange={(e) => handle(e)} id='name' value={data.value}></input>
               </div>
               <div className='mb-3'>
-                <label>Date Of Birth</label>
+                <label style={{color:"white"}}>Date Of Birth</label>
                 <input type='date' className='form-control' placeholder='Enter date' onChange={(e) => handle(e)} id='dob' value={data.value} max={vdate}></input>
 
               </div>
 
               <div className='mb-3'>
-                <label>Mobile: </label>
+                <label style={{color:"white"}}>Mobile: </label>
                 <input type="text" name="mob_no" className='col-4' onChange={(e) => handle(e)} id='mobNo' value={data.value} pattern="\d{10}" maxLength={10}></input>
-                &nbsp;
-                <label>Email:</label>
+                &nbsp;<br></br>
+                <label style={{color:"white"}}>Email:</label>
                 <input type='email' className='col-5' onChange={(e) => handle(e)} id='email' value={data.value}></input ><br></br>
 
               </div>
               <div className='mb-3'>
-                <label>Address</label><br></br>
+                <label style={{color:"white"}}>Address</label><br></br>
                 <textarea className='col-100  form-control' onChange={(e) => handle(e)} id='address' value={data.value}> </textarea>
               </div>
 
               <div className='mb-3'>
-                <label>Password</label>
+                <label style={{color:"white"}}>Password</label>
                 <input type='password' className='form-control' onChange={(e) => handle(e)} id='password' value={data.value}></input>
 
               </div>

@@ -269,5 +269,15 @@ public class FacultyController {
 					HttpStatus.NOT_FOUND);
 		}
 	}
+	@GetMapping("/viewstudent")
+	public ResponseEntity<?> viewStudentDetails()
+	{
+		try {
+			return ResponseEntity.status(HttpStatus.OK).body(facultyService.getAllStudentByRoleStudent());
+		}
+		catch (RuntimeException e) {
+			return new ResponseEntity<>(new ApiResponse(e.getMessage()), HttpStatus.NOT_FOUND);
+		}
+	}
 
 }
