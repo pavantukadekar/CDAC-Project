@@ -1,2 +1,3 @@
 # CDAC-Project
-The Online Student Portal is a web based application designed to provide students with a centralize platform to access academic information, resources and services .By using this application Faculties can assign assignments and  grade them. This application is developed using Spring Boot(Back-end), React JS(Front-end) and MySQL as a RDBMS.
+The Online Student Portal is a web-based application designed to provide students with a centralized platform to access academic information, resources and services. This application has three main modules namely admin, faculty and student. Admin performs student and faculty profile management. Faculty provides all the educational resources to students and students have access to all these resources.
+Technologies Used:-Spring Boot,React JS,MySql
